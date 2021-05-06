@@ -1,3 +1,5 @@
+@import url(normalize.css);
+
 :root {
     --color-primary:#2584ff;
     --color-secondary:#00d9ff;
@@ -23,10 +25,12 @@ html {
 }
 
 body {
+     
     font-family: Inter, Arial, Helvetica, sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 1.5;
     color: var(--color-body);
+    overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -44,7 +48,9 @@ h2 {
 }
 
 h3 {
-    font-size: 3rem;
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1.3;
     
 }
 
@@ -202,7 +208,7 @@ a {
     font-weight: 600;
     margin: 1rem 0;
     outline: none;
-    padding: 2rem 3rem;
+    padding: 2rem 3vw;
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
@@ -293,6 +299,7 @@ a {
     border: 0;
     flex-grow: 1;
     padding: 1.5rem 2rem;
+    width: 0;
 }
 
 .input-group .btn{
@@ -372,9 +379,7 @@ a {
     margin-bottom: 2rem;
 }
 
-.plan--popular {
-    transform: scale(1.1);
-}
+
 
 .plan--popular .card__header {
     position: relative;
@@ -397,6 +402,11 @@ a {
 }
 
 @media screen and (min-width: 1024px) {
+
+    .plan--popular {
+    transform: scale(1.1);
+}
+
     .plan__name{
         font-size: 1.5rem;
     }
@@ -449,16 +459,16 @@ a {
 }
 
 .quote__author {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
     font-style: normal;
-    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
 }
 
 .quote__oraganization {
     color: var(--color-headings);
     opacity: 0.4;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-style: normal;
 }
 
@@ -468,7 +478,7 @@ a {
     }
 
     .quote__author {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
 
     .quote__oraganization {
@@ -485,18 +495,28 @@ a {
     .grid--1x2 {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+@media screen and (min-width: 1024px) {
     .grid--1x3 {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3,1fr);
     }
 }
+
 
 /* Review Card */
 .review_card {
     padding: 3rem;
 }
 
+.review_card .quote{
+    margin: 2rem 0;
+    font-size: 110%;
+}
+
 .rc__image {
     position: relative;
+    margin: 0 3rem;
 }
 
 .rc__image > img {
@@ -514,15 +534,13 @@ a {
 }
 
 @media screen and (min-width: 1024px) {
-    .review_card .quote,
-    .review_card .quote__author {
-        font-size: 2.5rem;
+    .review_card .quote {
+       margin: 5rem 0 0 6rem;
+        font-size: 120%;
+        line-height: 1.5;
     }
 
-    .review_card .quote {
-        margin-left: 6rem;
-        margin-right: 0;
-    }
+    
 }
 
 /* Callout */
@@ -743,9 +761,10 @@ a {
 }
 
 .block-domain__price {
+    color: var(--color-headings);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 6rem);
     justify-items: center;
     font-size: 2rem;
     font-weight: 600;
@@ -771,12 +790,12 @@ a {
 
 /* Feature */
 .feature {
-    gap: 5rem 2rem;
+    gap: 4rem 2rem;
     margin: 12rem 0;
 }
 
 .feature:first-of-type {
-    margin: 5rem;
+    margin-top: 5rem;
 }
 
 .feature__heading {
